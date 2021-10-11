@@ -1,0 +1,21 @@
+[package]
+name = "wasm-hw-test"
+version = "0.1.0"
+authors = ["Sergey O. Boyko <sergey.boyko0791@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+trezor_api = { path = "src/trezor_api" }
+wasm-bindgen = { version = "0.2.50", features = ["serde-serialize", "nightly"] }
+wasm-bindgen-futures = { version = "0.4.1" }
+js-sys = { version = "0.3.27" }
+web-sys = { version = "0.3.4", features = ["console"] }
+
+[workspace]
+members = [
+    "src/trezor_api"
+]
+

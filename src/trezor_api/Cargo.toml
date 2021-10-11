@@ -1,0 +1,31 @@
+[package]
+name = "trezor_api"
+version = "0.1.0"
+authors = ["Zura Benashvili <zura.benashvili@gmail.com>"]
+edition = "2018"
+
+[build-dependencies]
+protoc-rust = "2.22.0"
+
+[dependencies]
+#types = { path = "../types" }
+futures = "0.3.17"
+async-trait = "0.1"
+protobuf = "2.22.0"
+byteorder = "1.4.2"
+serde = "1.0"
+serde_derive = "1.0"
+#sodiumoxide = "=0.2.6"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+rusb = "0.7.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = { version = "0.3.27" }
+wasm-bindgen = { version = "0.2.50", features = ["serde-serialize", "nightly"] }
+wasm-bindgen-futures = { version = "0.4.1" }
+wasm-bindgen-test = { version = "0.3.1" }
+web-sys = { version = "0.3.4", features = ["console"] }
+
+#[build-dependencies]
+#prost-build = "0.8"

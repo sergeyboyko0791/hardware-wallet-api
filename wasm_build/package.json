@@ -1,0 +1,23 @@
+{
+  "name": "ledger-browser-example",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "certificate": "openssl req -nodes -config certs/openssl.cnf -new -x509 -keyout certs/server.key -out certs/server.cert; openssl x509 -in certs/server.cert -out certs/cert.pem -outform PEM"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^6.0.1",
+    "core-js": "^3.18.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.58.0",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  }
+}

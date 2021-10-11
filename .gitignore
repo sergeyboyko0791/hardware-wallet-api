@@ -2,6 +2,6 @@ $ cat .gitignore
 .env
 .idea/
 target/
-wasm_build/
+wasm_build/*/
 Cargo.lock
 !.gitignore
